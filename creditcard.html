@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fund Add with Credit Card - Digi Online Sewa</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #10245b;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.page {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 185px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2875e8,
+            #1764d8
+        );
+
+    color: white;
+
+    position: relative;
+
+    text-align: center;
+
+    padding-top: 38px;
+}
+
+
+.back-btn {
+    position: absolute;
+
+    left: 40px;
+    top: 55px;
+
+    font-size: 48px;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+.header h1 {
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+
+.header p {
+    font-size: 24px;
+}
+
+
+.secure {
+    position: absolute;
+
+    right: 35px;
+    top: 38px;
+
+    text-align: center;
+}
+
+
+.secure-icon {
+    font-size: 40px;
+
+    display: block;
+}
+
+
+.secure-text {
+    font-size: 17px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 45px 40px 60px;
+}
+
+
+/* =========================
+   SECURE BOX
+========================= */
+
+.secure-box {
+    width: 100%;
+
+    min-height: 125px;
+
+    background: #f3fbf8;
+
+    border: 1px solid #dceee9;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 25px 35px;
+
+    margin-bottom: 55px;
+}
+
+
+.check {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 50%;
+
+    background: #42c889;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-right: 25px;
+}
+
+
+.secure-box h2 {
+    color: #075b49;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.secure-box p {
+    color: #36546a;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   CARD BOX
+========================= */
+
+.card-box {
+    width: 100%;
+
+    border: 1px solid #e0e6ef;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 5px 20px rgba(0,40,120,.07);
+}
+
+
+.card-title {
+    color: #102e63;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.field {
+    margin-bottom: 22px;
+}
+
+
+.field label {
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #243d69;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input {
+    width: 100%;
+
+    height: 65px;
+
+    border: 1.5px solid #d5dce8;
+
+    border-radius: 11px;
+
+    padding: 0 18px;
+
+    outline: none;
+
+    font-size: 18px;
+
+    color: #243d69;
+
+    transition: .2s;
+}
+
+
+.input:focus {
+    border-color: #2875e8;
+
+    box-shadow:
+        0 0 0 3px rgba(40,117,232,.10);
+}
+
+
+/* =========================
+   TWO INPUTS
+========================= */
+
+.two-fields {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount-box {
+    position: relative;
+}
+
+
+.amount-symbol {
+    position: absolute;
+
+    left: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #102e63;
+
+    z-index: 2;
+}
+
+
+.amount-input {
+    padding-left: 45px;
+}
+
+
+.limit {
+    font-size: 14px;
+
+    color: #667792;
+
+    margin-top: 8px;
+}
+
+
+.error-text {
+    display: none;
+
+    color: #d93025;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   PAY BUTTON
+========================= */
+
+.pay-btn {
+    width: 100%;
+
+    height: 70px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2875e8,
+            #1764d8
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    transition: .2s;
+}
+
+
+.pay-btn:hover {
+    background: #155bc7;
+}
+
+
+/* =========================
+   SECURITY TEXT
+========================= */
+
+.bottom-security {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #65738a;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   ERROR POPUP
+========================= */
+
+.error-popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.45);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.error-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+
+    animation: popup .2s ease;
+}
+
+
+@keyframes popup {
+
+    from {
+        transform: scale(.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+.error-icon {
+
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    color: #e53935;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    font-weight: bold;
+}
+
+
+.error-card h2 {
+
+    font-size: 22px;
+
+    color: #10245b;
+
+    margin-bottom: 12px;
+}
+
+
+.error-card p {
+
+    font-size: 15px;
+
+    color: #65738a;
+
+    line-height: 1.5;
+}
+
+
+.close-popup {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    color: #637494;
+
+    cursor: pointer;
+
+    line-height: 35px;
+}
+
+
+.close-popup:hover {
+    color: #e53935;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background: white;
+    }
+
+
+    .page {
+        width: 100%;
+    }
+
+
+    .header {
+        height: 135px;
+
+        padding-top: 25px;
+    }
+
+
+    .back-btn {
+
+        left: 15px;
+
+        top: 40px;
+
+        font-size: 35px;
+    }
+
+
+    .header h1 {
+
+        font-size: 21px;
+
+        margin-bottom: 7px;
+
+        padding: 0 45px;
+    }
+
+
+    .header p {
+
+        font-size: 14px;
+
+        padding: 0 35px;
+    }
+
+
+    .secure {
+        display: none;
+    }
+
+
+    .content {
+
+        padding: 25px 18px 40px;
+    }
+
+
+    .secure-box {
+
+        min-height: 100px;
+
+        border-radius: 14px;
+
+        padding: 15px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .check {
+
+        width: 43px;
+        height: 43px;
+
+        min-width: 43px;
+
+        font-size: 22px;
+
+        margin-right: 13px;
+    }
+
+
+    .secure-box h2 {
+
+        font-size: 17px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .secure-box p {
+
+        font-size: 13px;
+
+        line-height: 18px;
+    }
+
+
+    .card-box {
+
+        padding: 20px 15px;
+
+        border-radius: 14px;
+    }
+
+
+    .card-title {
+
+        font-size: 22px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .field label {
+
+        font-size: 14px;
+    }
+
+
+    .input {
+
+        height: 55px;
+
+        font-size: 16px;
+    }
+
+
+    .two-fields {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+    }
+
+
+    .pay-btn {
+
+        height: 60px;
+
+        font-size: 19px;
+    }
+
+
+    .bottom-security {
+
+        font-size: 12px;
+    }
+
+
+    .error-card {
+
+        padding: 28px 20px;
+    }
+
+
+    .error-card h2 {
+
+        font-size: 20px;
+    }
+
+
+    .error-card p {
+
+        font-size: 14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <div class="header">
+
+
+        <div
+            class="back-btn"
+            onclick="goBack()"
+        >
+            ←
+        </div>
+
+
+        <h1>
+            Fund Add with Credit Card
+        </h1>
+
+
+        <p>
+            Add money to your wallet using Credit Card
+        </p>
+
+
+        <div class="secure">
+
+            <span class="secure-icon">
+                🔒
+            </span>
+
+            <span class="secure-text">
+                100% Secure
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         CONTENT
+    ========================= -->
+
+    <div class="content">
+
+
+        <!-- SECURE PAYMENT -->
+
+        <div class="secure-box">
+
+            <div class="check">
+                ✓
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Secure Card Payment
+                </h2>
+
+                <p>
+                    Your card details are protected with secure encryption.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD FORM -->
+
+        <div class="card-box">
+
+
+            <h2 class="card-title">
+                Enter Card Details
+            </h2>
+
+
+
+            <!-- CARD NUMBER -->
+
+            <div class="field">
+
+                <label>
+                    Card Number
+                </label>
+
+                <input
+                    type="text"
+                    id="cardNumber"
+                    class="input"
+                    placeholder="XXXX XXXX XXXX XXXX"
+                    maxlength="19"
+                    inputmode="numeric"
+                    autocomplete="cc-number"
+                    oninput="formatCardNumber(this)"
+                >
+
+            </div>
+
+
+
+            <!-- CARD HOLDER -->
+
+            <div class="field">
+
+                <label>
+                    Card Holder Name
+                </label>
+
+                <input
+                    type="text"
+                    id="cardName"
+                    class="input"
+                    placeholder="Enter card holder name"
+                    autocomplete="cc-name"
+                >
+
+            </div>
+
+
+
+            <!-- EXPIRY + CVV -->
+
+            <div class="two-fields">
+
+
+                <div class="field">
+
+                    <label>
+                        Expiry Date
+                    </label>
+
+                    <input
+                        type="text"
+                        id="expiry"
+                        class="input"
+                        placeholder="MM/YY"
+                        maxlength="5"
+                        inputmode="numeric"
+                        autocomplete="cc-exp"
+                        oninput="formatExpiry(this)"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        CVV
+                    </label>
+
+                    <input
+                        type="password"
+                        id="cvv"
+                        class="input"
+                        placeholder="CVV"
+                        maxlength="4"
+                        inputmode="numeric"
+                        autocomplete="cc-csc"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- AMOUNT -->
+
+            <div class="field">
+
+                <label>
+                    Enter Amount
+                </label>
+
+
+                <div class="amount-box">
+
+                    <span class="amount-symbol">
+                        ₹
+                    </span>
+
+
+                    <input
+                        type="number"
+                        id="amount"
+                        class="input amount-input"
+                        placeholder="Enter Amount"
+                        min="10"
+                        max="3000"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <div class="limit">
+                    Minimum ₹10 &nbsp; | &nbsp; Maximum ₹3000
+                </div>
+
+
+                <div
+                    class="error-text"
+                    id="amountError"
+                >
+                    Amount must be between ₹10 and ₹3000.
+                </div>
+
+            </div>
+
+
+
+            <!-- PROCEED TO PAY -->
+
+            <button
+                type="button"
+                class="pay-btn"
+                onclick="processPayment()"
+            >
+
+                🔒 Proceed to Pay
+
+            </button>
+
+
+            <div class="bottom-security">
+
+                🔒 Your payment information is securely encrypted
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ERROR POPUP
+========================= -->
+
+<div
+    class="error-popup"
+    id="errorPopup"
+>
+
+    <div class="error-card">
+
+
+        <button
+            type="button"
+            class="close-popup"
+            onclick="closeErrorPopup()"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="error-icon">
+            !
+        </div>
+
+
+        <h2>
+            Payment Failed
+        </h2>
+
+
+        <p>
+            Card se payment nahi ki ja sakti.
+            Kripya UPI ya kisi anya payment method
+            ka use karein.
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+function goBack() {
+
+    if (window.history.length > 1) {
+
+        window.history.back();
+
+    } else {
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+
+/* =========================
+   CARD NUMBER FORMAT
+========================= */
+
+function formatCardNumber(input) {
+
+    let value =
+        input.value
+        .replace(/\D/g, "")
+        .substring(0, 16);
+
+
+    let formatted =
+        value.match(/.{1,4}/g);
+
+
+    input.value =
+        formatted
+        ? formatted.join(" ")
+        : "";
+
+}
+
+
+/* =========================
+   EXPIRY FORMAT
+========================= */
+
+function formatExpiry(input) {
+
+    let value =
+        input.value
+        .replace(/\D/g, "")
+        .substring(0, 4);
+
+
+    if (value.length >= 3) {
+
+        value =
+            value.substring(0, 2)
+            + "/"
+            + value.substring(2);
+
+    }
+
+
+    input.value = value;
+
+}
+
+
+/* =========================
+   PROCEED TO PAY
+========================= */
+
+function processPayment() {
+
+    /*
+       Card payment is not processed here.
+       Clicking Proceed to Pay shows the error popup.
+    */
+
+    document.getElementById("amountError").style.display =
+        "none";
+
+
+    document.getElementById("errorPopup").style.display =
+        "flex";
+
+}
+
+
+/* =========================
+   CLOSE ERROR POPUP
+========================= */
+
+function closeErrorPopup() {
+
+    document.getElementById("errorPopup").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   CLOSE POPUP BY CLICKING
+   OUTSIDE THE BOX
+========================= */
+
+document.getElementById("errorPopup").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
