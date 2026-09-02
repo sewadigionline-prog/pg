@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fund Add with NetBanking - Digi Online Sewa</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7ff;
+    color: #10245b;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    width: 96%;
+    max-width: 1150px;
+    min-height: 100vh;
+
+    margin: 25px auto;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 40px rgba(0,40,120,.12);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    min-height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #061f63 0%,
+            #0754c7 55%,
+            #1490f5 100%
+        );
+
+    color: white;
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 45px 70px;
+}
+
+.back-btn {
+    position: absolute;
+
+    left: 35px;
+    top: 50px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.12);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: .2s;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,.22);
+}
+
+.header h1 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 18px;
+
+    opacity: .92;
+}
+
+.security-badge {
+    position: absolute;
+
+    right: 35px;
+    top: 42px;
+
+    text-align: center;
+}
+
+.security-badge .lock {
+    display: block;
+
+    font-size: 35px;
+
+    margin-bottom: 5px;
+}
+
+.security-badge span {
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 40px;
+}
+
+
+/* =========================
+   INFORMATION CARDS
+========================= */
+
+.bank-info {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.bank-card {
+    padding: 23px 18px;
+
+    border-radius: 16px;
+
+    border: 1px solid #dce5f2;
+
+    background: #fbfdff;
+
+    text-align: center;
+}
+
+.bank-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 15px;
+
+    background: #edf4ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.bank-card h3 {
+    font-size: 16px;
+
+    color: #10245b;
+
+    margin-bottom: 7px;
+}
+
+.bank-card p {
+    font-size: 12px;
+
+    color: #65738a;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-box {
+    border: 1px solid #dce4ef;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    background: white;
+
+    box-shadow: 0 5px 20px rgba(0,40,120,.06);
+}
+
+.form-title {
+    font-size: 27px;
+
+    color: #10245b;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   FIELD
+========================= */
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #253d69;
+
+    margin-bottom: 9px;
+}
+
+.input,
+.select {
+    width: 100%;
+
+    height: 62px;
+
+    border: 1.5px solid #d5deeb;
+
+    border-radius: 11px;
+
+    padding: 0 17px;
+
+    outline: none;
+
+    font-size: 17px;
+
+    color: #243d69;
+
+    background: white;
+
+    transition: .2s;
+}
+
+.input:focus,
+.select:focus {
+    border-color: #1670e9;
+
+    box-shadow:
+        0 0 0 3px rgba(22,112,233,.10);
+}
+
+
+/* =========================
+   TWO FIELDS
+========================= */
+
+.two-fields {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount-box {
+    position: relative;
+}
+
+.rupee {
+    position: absolute;
+
+    left: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #10245b;
+
+    z-index: 2;
+}
+
+.amount-input {
+    padding-left: 43px;
+}
+
+.limit {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: #71809a;
+}
+
+
+/* =========================
+   PROCEED BUTTON
+========================= */
+
+.pay-btn {
+    width: 100%;
+
+    height: 68px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0876ed,
+            #0756c9
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+
+    transition: .2s;
+}
+
+.pay-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(0,80,220,.20);
+}
+
+
+/* =========================
+   SECURITY TEXT
+========================= */
+
+.secure-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    color: #71809a;
+}
+
+
+/* =========================
+   ERROR POPUP
+========================= */
+
+.error-popup {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.48);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.error-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 32px 25px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 55px rgba(0,0,0,.28);
+
+    animation: popup .2s ease;
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+.error-icon {
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    color: #e53935;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+.error-card h2 {
+    color: #10245b;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.error-card p {
+    color: #65738a;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+.close-popup {
+    position: absolute;
+
+    right: 13px;
+    top: 10px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #637494;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    color: #e53935;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        background: white;
+    }
+
+    .page {
+        width: 100%;
+
+        margin: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+    .header {
+        min-height: 145px;
+
+        padding: 30px 50px 25px;
+    }
+
+    .back-btn {
+        left: 13px;
+
+        top: 38px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 29px;
+    }
+
+    .header h1 {
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+    .header p {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+    .security-badge {
+        display: none;
+    }
+
+    .content {
+        padding: 22px 15px 40px;
+    }
+
+    .bank-info {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+    .bank-card {
+        display: flex;
+
+        align-items: center;
+
+        text-align: left;
+
+        padding: 15px;
+    }
+
+    .bank-icon {
+        width: 47px;
+        height: 47px;
+
+        min-width: 47px;
+
+        margin: 0 13px 0 0;
+
+        font-size: 23px;
+    }
+
+    .bank-card h3 {
+        font-size: 15px;
+    }
+
+    .bank-card p {
+        font-size: 11px;
+    }
+
+    .form-box {
+        padding: 20px 15px;
+
+        border-radius: 14px;
+    }
+
+    .form-title {
+        font-size: 21px;
+
+        margin-bottom: 22px;
+    }
+
+    .field label {
+        font-size: 13px;
+    }
+
+    .input,
+    .select {
+        height: 55px;
+
+        font-size: 15px;
+    }
+
+    .two-fields {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .pay-btn {
+        height: 60px;
+
+        font-size: 18px;
+    }
+
+    .secure-text {
+        font-size: 11px;
+    }
+
+    .error-card {
+        padding: 28px 20px;
+    }
+
+    .error-card h2 {
+        font-size: 20px;
+    }
+
+    .error-card p {
+        font-size: 14px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+
+        <div
+            class="back-btn"
+            onclick="goBack()"
+        >
+            ←
+        </div>
+
+
+        <h1>
+            Fund Add with NetBanking
+        </h1>
+
+
+        <p>
+            Add money to your wallet using NetBanking
+        </p>
+
+
+        <div class="security-badge">
+
+            <span class="lock">
+                🔒
+            </span>
+
+            <span>
+                Secure Payment
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CONTENT -->
+
+    <div class="content">
+
+
+        <!-- INFORMATION CARDS -->
+
+        <div class="bank-info">
+
+
+            <div class="bank-card">
+
+                <div class="bank-icon">
+                    🏦
+                </div>
+
+                <div>
+
+                    <h3>
+                        All Major Banks
+                    </h3>
+
+                    <p>
+                        Use your preferred bank to make the payment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="bank-card">
+
+                <div class="bank-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <h3>
+                        Secure Banking
+                    </h3>
+
+                    <p>
+                        Your transaction information is protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="bank-card">
+
+                <div class="bank-icon">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <h3>
+                        Quick Processing
+                    </h3>
+
+                    <p>
+                        Fast and convenient payment experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <div class="form-box">
+
+
+            <h2 class="form-title">
+                Enter Bank Details
+            </h2>
+
+
+
+            <!-- BANK -->
+
+            <div class="field">
+
+                <label>
+                    Select Your Bank
+                </label>
+
+
+                <select
+                    class="select"
+                    id="bank"
+                >
+
+                    <option value="">
+                        Select Bank
+                    </option>
+
+                    <option>
+                        State Bank of India
+                    </option>
+
+                    <option>
+                        HDFC Bank
+                    </option>
+
+                    <option>
+                        ICICI Bank
+                    </option>
+
+                    <option>
+                        Axis Bank
+                    </option>
+
+                    <option>
+                        Punjab National Bank
+                    </option>
+
+                    <option>
+                        Bank of Baroda
+                    </option>
+
+                    <option>
+                        Canara Bank
+                    </option>
+
+                    <option>
+                        Union Bank of India
+                    </option>
+
+                    <option>
+                        Kotak Mahindra Bank
+                    </option>
+
+                    <option>
+                        Other Bank
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ACCOUNT HOLDER -->
+
+            <div class="field">
+
+                <label>
+                    Account Holder Name
+                </label>
+
+
+                <input
+                    type="text"
+                    class="input"
+                    id="accountName"
+                    placeholder="Enter account holder name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+
+            <!-- ACCOUNT NUMBER -->
+
+            <div class="field">
+
+                <label>
+                    Account Number
+                </label>
+
+
+                <input
+                    type="text"
+                    class="input"
+                    id="accountNumber"
+                    placeholder="Enter account number"
+                    maxlength="18"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    oninput="onlyNumbers(this)"
+                >
+
+            </div>
+
+
+
+            <!-- IFSC -->
+
+            <div class="field">
+
+                <label>
+                    IFSC Code
+                </label>
+
+
+                <input
+                    type="text"
+                    class="input"
+                    id="ifsc"
+                    placeholder="Enter IFSC code"
+                    maxlength="11"
+                    autocomplete="off"
+                    oninput="formatIFSC(this)"
+                >
+
+            </div>
+
+
+
+            <!-- AMOUNT -->
+
+            <div class="field">
+
+                <label>
+                    Enter Amount
+                </label>
+
+
+                <div class="amount-box">
+
+                    <span class="rupee">
+                        ₹
+                    </span>
+
+
+                    <input
+                        type="number"
+                        class="input amount-input"
+                        id="amount"
+                        placeholder="Enter Amount"
+                        min="10"
+                        max="3000"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <div class="limit">
+                    Minimum ₹10 &nbsp; | &nbsp; Maximum ₹3000
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="button"
+                class="pay-btn"
+                onclick="processPayment()"
+            >
+
+                🔒 Proceed to Pay
+
+            </button>
+
+
+            <div class="secure-text">
+
+                🔒 Secure & encrypted transaction
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ERROR POPUP -->
+
+<div
+    class="error-popup"
+    id="errorPopup"
+>
+
+
+    <div class="error-card">
+
+
+        <button
+            type="button"
+            class="close-popup"
+            onclick="closeErrorPopup()"
+        >
+            ×
+        </button>
+
+
+        <div class="error-icon">
+            !
+        </div>
+
+
+        <h2>
+            Payment Failed
+        </h2>
+
+
+        <p>
+            NetBanking payments are currently unavailable.
+            Please use UPI or another available payment method.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+function goBack() {
+
+    if (window.history.length > 1) {
+
+        window.history.back();
+
+    } else {
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+
+/* =========================
+   ONLY NUMBERS
+========================= */
+
+function onlyNumbers(input) {
+
+    input.value =
+        input.value.replace(/\D/g, "");
+
+}
+
+
+/* =========================
+   IFSC FORMAT
+========================= */
+
+function formatIFSC(input) {
+
+    input.value =
+        input.value
+        .replace(/[^a-zA-Z0-9]/g, "")
+        .toUpperCase()
+        .substring(0, 11);
+
+}
+
+
+/* =========================
+   PROCEED TO PAY
+========================= */
+
+function processPayment() {
+
+    const bank =
+        document.getElementById("bank").value;
+
+    const accountName =
+        document.getElementById("accountName").value.trim();
+
+    const accountNumber =
+        document.getElementById("accountNumber").value.trim();
+
+    const ifsc =
+        document.getElementById("ifsc").value.trim();
+
+    const amount =
+        Number(document.getElementById("amount").value);
+
+
+    if (!bank) {
+
+        alert("Please select your bank.");
+
+        return;
+
+    }
+
+
+    if (!accountName) {
+
+        alert("Please enter account holder name.");
+
+        return;
+
+    }
+
+
+    if (!accountNumber) {
+
+        alert("Please enter account number.");
+
+        return;
+
+    }
+
+
+    if (!ifsc) {
+
+        alert("Please enter IFSC code.");
+
+        return;
+
+    }
+
+
+    if (!amount || amount < 10 || amount > 3000) {
+
+        alert("Please enter an amount between ₹10 and ₹3000.");
+
+        return;
+
+    }
+
+
+    /* Show payment error */
+
+    document.getElementById("errorPopup").style.display =
+        "flex";
+
+}
+
+
+/* =========================
+   CLOSE POPUP
+========================= */
+
+function closeErrorPopup() {
+
+    document.getElementById("errorPopup").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document.getElementById("errorPopup").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
