@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment Method - Digi Online Sewa</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7ff;
+    color: #10245b;
+}
+
+
+/* =========================================
+   MAIN PAYMENT BOX
+========================================= */
+
+.payment-wrapper {
+    width: 96%;
+    max-width: 1500px;
+    margin: 25px auto;
+
+    display: flex;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 40px rgba(0, 40, 120, 0.13);
+}
+
+
+/* =========================================
+   LEFT BLUE PART
+========================================= */
+
+.left-section {
+
+    width: 40%;
+
+    padding: 55px 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #06246f 0%,
+            #003fae 50%,
+            #0066ed 100%
+        );
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Blue background design */
+
+.left-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 220px;
+
+    left: -80px;
+    bottom: -80px;
+
+    background: rgba(0, 132, 255, 0.35);
+
+    border-radius: 50%;
+
+    transform: rotate(-15deg);
+}
+
+.left-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 150px;
+
+    right: -130px;
+    bottom: 0;
+
+    background: rgba(0, 80, 220, 0.45);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   SECURE PAYMENT
+========================================= */
+
+.secure-payment {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 55px;
+}
+
+
+.security-icon {
+
+    width: 105px;
+    height: 105px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+}
+
+
+.secure-payment h1 {
+
+    font-size: 29px;
+
+    margin-bottom: 10px;
+}
+
+
+.secure-payment p {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    opacity: .92;
+}
+
+
+/* =========================================
+   ORDER SUMMARY
+========================================= */
+
+.order-box {
+
+    position: relative;
+
+    z-index: 2;
+
+    background: #ffffff;
+
+    color: #10245b;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.15);
+}
+
+
+.order-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    margin-bottom: 28px;
+}
+
+
+.order-title-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #1264e8;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.order-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 20px 0;
+
+    font-size: 15px;
+}
+
+
+.order-row span:last-child {
+
+    text-align: right;
+
+    font-weight: 500;
+}
+
+
+.dashed-line {
+
+    border-top: 1px dashed #d7deeb;
+
+    margin: 25px 0;
+}
+
+
+.total-row {
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.total-row span:last-child {
+
+    color: #0864e8;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   SECURITY FEATURES
+========================================= */
+
+.security-features {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    margin-top: 55px;
+
+    text-align: center;
+}
+
+
+.security-feature {
+
+    width: 33.33%;
+
+    padding: 0 8px;
+
+    border-right: 1px solid rgba(255,255,255,.25);
+}
+
+
+.security-feature:last-child {
+
+    border-right: none;
+}
+
+
+.security-feature .icon {
+
+    font-size: 31px;
+
+    margin-bottom: 10px;
+}
+
+
+.security-feature p {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   RIGHT WHITE PART
+========================================= */
+
+.right-section {
+
+    width: 60%;
+
+    padding: 48px 32px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.payment-heading {
+
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+
+.payment-heading h2 {
+
+    font-size: 30px;
+
+    color: #10245b;
+
+    margin-bottom: 10px;
+}
+
+
+.payment-heading p {
+
+    color: #637494;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PAYMENT OPTION
+========================================= */
+
+.payment-option {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 18px 25px;
+
+    margin-bottom: 16px;
+
+    border: 1px solid #dce4f0;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    text-decoration: none;
+
+    color: #10245b;
+
+    transition: all .25s ease;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+
+    /* Button/card ki tarah clickable */
+
+    cursor: pointer;
+}
+
+
+.payment-option:hover {
+
+    border-color: #1767e8;
+
+    transform: translateX(3px);
+
+    box-shadow:
+        0 8px 25px rgba(0,80,220,.10);
+}
+
+
+/* =========================================
+   PAYMENT IMAGE / ICON
+========================================= */
+
+.option-image {
+
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+    margin-right: 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #eef5ff;
+
+    border: 1px solid #e3eaf5;
+}
+
+
+.option-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 9px;
+}
+
+
+/* Different background */
+
+.upi-image {
+    background: #eef5ff;
+}
+
+.credit-image {
+    background: #edf5ff;
+}
+
+.debit-image {
+    background: #e5faf3;
+}
+
+.bank-image {
+    background: #f3edff;
+}
+
+
+/* =========================================
+   OPTION TEXT
+========================================= */
+
+.option-text {
+
+    flex: 1;
+}
+
+
+.option-text h3 {
+
+    font-size: 20px;
+
+    color: #071d5b;
+
+    margin-bottom: 8px;
+}
+
+
+.option-text p {
+
+    font-size: 15px;
+
+    color: #53678e;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   RIGHT ARROW
+========================================= */
+
+.option-arrow {
+
+    font-size: 36px;
+
+    color: #61708c;
+
+    margin-left: 15px;
+}
+
+
+/* =========================================
+   BOTTOM IMAGE
+========================================= */
+
+.bottom-image {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e2e7ef;
+
+    text-align: center;
+}
+
+
+.bottom-image img {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    height: auto;
+
+    display: block;
+
+    margin: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .payment-wrapper {
+
+        width: 95%;
+
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .payment-wrapper {
+
+        width: 100%;
+
+        margin: 0;
+
+        border-radius: 0;
+    }
+
+
+    .left-section {
+
+        padding: 35px 18px;
+    }
+
+
+    .right-section {
+
+        padding: 35px 14px;
+    }
+
+
+    .secure-payment {
+
+        gap: 15px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .security-icon {
+
+        width: 75px;
+        height: 75px;
+
+        font-size: 37px;
+    }
+
+
+    .secure-payment h1 {
+
+        font-size: 22px;
+    }
+
+
+    .secure-payment p {
+
+        font-size: 13px;
+    }
+
+
+    .order-box {
+
+        padding: 22px 17px;
+    }
+
+
+    .order-row {
+
+        font-size: 13px;
+    }
+
+
+    .total-row {
+
+        font-size: 17px;
+    }
+
+
+    .total-row span:last-child {
+
+        font-size: 22px;
+    }
+
+
+    .payment-heading h2 {
+
+        font-size: 25px;
+    }
+
+
+    .payment-heading p {
+
+        font-size: 13px;
+    }
+
+
+    .payment-option {
+
+        min-height: 105px;
+
+        padding: 14px 12px;
+    }
+
+
+    .option-image {
+
+        width: 58px;
+        height: 58px;
+
+        margin-right: 14px;
+    }
+
+
+    .option-text h3 {
+
+        font-size: 16px;
+    }
+
+
+    .option-text p {
+
+        font-size: 11px;
+    }
+
+
+    .option-arrow {
+
+        font-size: 27px;
+
+        margin-left: 7px;
+    }
+
+
+    .security-features {
+
+        margin-top: 40px;
+    }
+
+
+    .security-feature p {
+
+        font-size: 10px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="payment-wrapper">
+
+
+<!-- =====================================================
+     LEFT BLUE SECTION
+===================================================== -->
+
+<section class="left-section">
+
+
+    <!-- SECURE PAYMENT -->
+
+    <div class="secure-payment">
+
+        <div class="security-icon">
+            🔒
+        </div>
+
+        <div>
+
+            <h1>
+                Secure Payment
+            </h1>
+
+            <p>
+                Your payment is 100% secure<br>
+                with encrypted transaction
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ORDER SUMMARY -->
+
+    <div class="order-box">
+
+        <div class="order-title">
+
+            <div class="order-title-icon">
+                🔒
+            </div>
+
+            <span>
+                Order Summary
+            </span>
+
+        </div>
+
+
+        <div class="order-row">
+
+            <span>
+                Order ID
+            </span>
+
+            <span>
+                #ORD12345678
+            </span>
+
+        </div>
+
+
+        <div class="order-row">
+
+            <span>
+                Product / Service
+            </span>
+
+            <span>
+                Premium Membership
+            </span>
+
+        </div>
+
+
+        <div class="order-row">
+
+            <span>
+                Amount
+            </span>
+
+            <span>
+                ₹1,299.00
+            </span>
+
+        </div>
+
+
+        <div class="order-row">
+
+            <span>
+                Convenience Fee
+            </span>
+
+            <span>
+                ₹0.00
+            </span>
+
+        </div>
+
+
+        <div class="dashed-line"></div>
+
+
+        <div class="order-row total-row">
+
+            <span>
+                Total Amount
+            </span>
+
+            <span>
+                ₹1,299.00
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SECURITY FEATURES -->
+
+    <div class="security-features">
+
+
+        <div class="security-feature">
+
+            <div class="icon">
+                🔒
+            </div>
+
+            <p>
+                100% Secure<br>
+                Payments
+            </p>
+
+        </div>
+
+
+        <div class="security-feature">
+
+            <div class="icon">
+                🛡️
+            </div>
+
+            <p>
+                SSL Encrypted<br>
+                Transaction
+            </p>
+
+        </div>
+
+
+        <div class="security-feature">
+
+            <div class="icon">
+                🎧
+            </div>
+
+            <p>
+                24/7 Customer<br>
+                Support
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     RIGHT PAYMENT SECTION
+===================================================== -->
+
+<section class="right-section">
+
+
+    <!-- HEADING -->
+
+    <div class="payment-heading">
+
+        <h2>
+            Choose a Payment Method
+        </h2>
+
+        <p>
+            Select your preferred payment option to continue
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         UPI
+    ================================================== -->
+
+    <a
+        href="addfund.html"
+        target="_blank"
+        class="payment-option"
+    >
+
+        <div class="option-image upi-image">
+
+            <img
+                src="upi.jpg"
+                alt="UPI"
+            >
+
+        </div>
+
+
+        <div class="option-text">
+
+            <h3>
+                Fund Add with UPI
+            </h3>
+
+            <p>
+                Add funds using UPI apps like GPay, PhonePe etc.
+            </p>
+
+        </div>
+
+
+        <div class="option-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- =================================================
+         CREDIT CARD
+    ================================================== -->
+
+    <a
+        href="creditcard.html"
+        target="_blank"
+        class="payment-option"
+    >
+
+        <div class="option-image credit-image">
+
+            <img
+                src="creditcard.jpg"
+                alt="Credit Card"
+            >
+
+        </div>
+
+
+        <div class="option-text">
+
+            <h3>
+                Fund Add with Credit Card
+            </h3>
+
+            <p>
+                Add funds using Visa, Mastercard, RuPay Credit Card
+            </p>
+
+        </div>
+
+
+        <div class="option-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- =================================================
+         DEBIT CARD
+    ================================================== -->
+
+    <a
+        href="debitcard.html"
+        target="_blank"
+        class="payment-option"
+    >
+
+        <div class="option-image debit-image">
+
+            <img
+                src="debitcard.jpg"
+                alt="Debit Card"
+            >
+
+        </div>
+
+
+        <div class="option-text">
+
+            <h3>
+                Fund Add with Debit Card
+            </h3>
+
+            <p>
+                Add funds using Visa, Mastercard, RuPay Debit Card
+            </p>
+
+        </div>
+
+
+        <div class="option-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- =================================================
+         NET BANKING
+    ================================================== -->
+
+    <a
+        href="netbanking.html"
+        target="_blank"
+        class="payment-option"
+    >
+
+        <div class="option-image bank-image">
+
+            <img
+                src="netbanking.jpg"
+                alt="NetBanking"
+            >
+
+        </div>
+
+
+        <div class="option-text">
+
+            <h3>
+                Fund Add with NetBanking
+            </h3>
+
+            <p>
+                Add funds using all major banks
+            </p>
+
+        </div>
+
+
+        <div class="option-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- =================================================
+         BOTTOM IMAGE
+================================================= -->
+
+    <div class="bottom-image">
+
+        <img
+            src="m.jpg"
+            alt="Payment Security"
+        >
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+
+</body>
+</html>
