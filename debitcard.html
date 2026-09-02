@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fund Add with Debit Card - Digi Online Sewa</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7ff;
+    color: #10245b;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    width: 96%;
+    max-width: 1150px;
+    min-height: 100vh;
+    margin: 25px auto;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 40px rgba(0,40,120,.12);
+}
+
+
+/* =========================
+   TOP BLUE HEADER
+========================= */
+
+.header {
+    min-height: 190px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #06246f 0%,
+            #075bd6 55%,
+            #1685f5 100%
+        );
+
+    color: white;
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 45px 70px;
+}
+
+
+.back-btn {
+    position: absolute;
+
+    left: 35px;
+    top: 50px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.12);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: .2s;
+}
+
+
+.back-btn:hover {
+    background: rgba(255,255,255,.22);
+}
+
+
+.header h1 {
+    font-size: 35px;
+
+    margin-bottom: 12px;
+}
+
+
+.header p {
+    font-size: 18px;
+
+    opacity: .92;
+}
+
+
+.security-badge {
+    position: absolute;
+
+    right: 35px;
+    top: 42px;
+
+    text-align: center;
+}
+
+
+.security-badge .lock {
+    font-size: 35px;
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+
+.security-badge span {
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 40px;
+}
+
+
+/* =========================
+   INFORMATION CARDS
+========================= */
+
+.info-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+.info-card {
+    border: 1px solid #dfe7f3;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    background: #fbfdff;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.info-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    border-radius: 14px;
+
+    background: #eaf3ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-right: 17px;
+}
+
+
+.info-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 6px;
+
+    color: #10245b;
+}
+
+
+.info-card p {
+    font-size: 13px;
+
+    color: #65738a;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   FORM BOX
+========================= */
+
+.form-box {
+    border: 1px solid #dce4ef;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 5px 20px rgba(0,40,120,.06);
+}
+
+
+.form-title {
+    font-size: 27px;
+
+    color: #10245b;
+
+    margin-bottom: 28px;
+}
+
+
+.field {
+    margin-bottom: 22px;
+}
+
+
+.field label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #253d69;
+
+    margin-bottom: 9px;
+}
+
+
+.input {
+    width: 100%;
+
+    height: 62px;
+
+    border: 1.5px solid #d5deeb;
+
+    border-radius: 11px;
+
+    padding: 0 17px;
+
+    outline: none;
+
+    font-size: 17px;
+
+    color: #213860;
+
+    transition: .2s;
+}
+
+
+.input:focus {
+    border-color: #1670e9;
+
+    box-shadow:
+        0 0 0 3px rgba(22,112,233,.10);
+}
+
+
+/* =========================
+   CARD NUMBER
+========================= */
+
+.card-number-box {
+    position: relative;
+}
+
+
+.card-small-icon {
+    position: absolute;
+
+    right: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   TWO FIELDS
+========================= */
+
+.two-fields {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   AMOUNT
+========================= */
+
+.amount-box {
+    position: relative;
+}
+
+
+.rupee {
+    position: absolute;
+
+    left: 17px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #10245b;
+}
+
+
+.amount-input {
+    padding-left: 43px;
+}
+
+
+.limit {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: #71809a;
+}
+
+
+/* =========================
+   PAY BUTTON
+========================= */
+
+.pay-btn {
+    width: 100%;
+
+    height: 68px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0876ed,
+            #0756c9
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+
+    transition: .2s;
+}
+
+
+.pay-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(0,80,220,.20);
+}
+
+
+/* =========================
+   BOTTOM SECURITY
+========================= */
+
+.secure-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    color: #71809a;
+}
+
+
+/* =========================
+   ERROR POPUP
+========================= */
+
+.error-popup {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.48);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+.error-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 32px 25px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 55px rgba(0,0,0,.28);
+
+    animation: popup .2s ease;
+}
+
+
+@keyframes popup {
+
+    from {
+        transform: scale(.85);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+.error-icon {
+
+    width: 68px;
+    height: 68px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    color: #e53935;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    font-weight: bold;
+}
+
+
+.error-card h2 {
+
+    color: #10245b;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+.error-card p {
+
+    color: #65738a;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.close-popup {
+
+    position: absolute;
+
+    right: 13px;
+    top: 10px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #637494;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+.close-popup:hover {
+    color: #e53935;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        background: #ffffff;
+    }
+
+
+    .page {
+        width: 100%;
+
+        margin: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
+
+
+    .header {
+        min-height: 145px;
+
+        padding: 30px 50px 25px;
+    }
+
+
+    .back-btn {
+        left: 13px;
+
+        top: 38px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 29px;
+    }
+
+
+    .header h1 {
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+
+    .header p {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+
+    .security-badge {
+        display: none;
+    }
+
+
+    .content {
+        padding: 22px 15px 40px;
+    }
+
+
+    .info-row {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .info-card {
+        padding: 16px;
+    }
+
+
+    .info-icon {
+        width: 47px;
+        height: 47px;
+
+        min-width: 47px;
+
+        font-size: 23px;
+
+        margin-right: 13px;
+    }
+
+
+    .info-card h3 {
+        font-size: 15px;
+    }
+
+
+    .info-card p {
+        font-size: 11px;
+    }
+
+
+    .form-box {
+        padding: 20px 15px;
+
+        border-radius: 14px;
+    }
+
+
+    .form-title {
+        font-size: 21px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .field label {
+        font-size: 13px;
+    }
+
+
+    .input {
+        height: 55px;
+
+        font-size: 15px;
+    }
+
+
+    .two-fields {
+        gap: 10px;
+    }
+
+
+    .pay-btn {
+        height: 60px;
+
+        font-size: 18px;
+    }
+
+
+    .secure-text {
+        font-size: 11px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <div class="header">
+
+
+        <div
+            class="back-btn"
+            onclick="goBack()"
+        >
+            ←
+        </div>
+
+
+        <h1>
+            Fund Add with Debit Card
+        </h1>
+
+
+        <p>
+            Add money to your wallet using Debit Card
+        </p>
+
+
+        <div class="security-badge">
+
+            <span class="lock">
+                🔒
+            </span>
+
+            <span>
+                Secure Payment
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         CONTENT
+    ========================= -->
+
+    <div class="content">
+
+
+        <!-- INFORMATION -->
+
+        <div class="info-row">
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    💳
+                </div>
+
+                <div>
+
+                    <h3>
+                        Debit Card Payment
+                    </h3>
+
+                    <p>
+                        Use your Visa, Mastercard or RuPay Debit Card.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🔐
+                </div>
+
+                <div>
+
+                    <h3>
+                        Safe & Secure
+                    </h3>
+
+                    <p>
+                        Your payment information is protected.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <div class="form-box">
+
+
+            <h2 class="form-title">
+                Enter Debit Card Details
+            </h2>
+
+
+
+            <!-- CARD NUMBER -->
+
+            <div class="field">
+
+                <label>
+                    Debit Card Number
+                </label>
+
+
+                <div class="card-number-box">
+
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        class="input"
+                        placeholder="XXXX XXXX XXXX XXXX"
+                        maxlength="19"
+                        inputmode="numeric"
+                        autocomplete="cc-number"
+                        oninput="formatCardNumber(this)"
+                    >
+
+
+                    <span class="card-small-icon">
+                        💳
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CARD HOLDER -->
+
+            <div class="field">
+
+                <label>
+                    Card Holder Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="cardName"
+                    class="input"
+                    placeholder="Enter card holder name"
+                    autocomplete="cc-name"
+                >
+
+            </div>
+
+
+
+            <!-- EXPIRY + CVV -->
+
+            <div class="two-fields">
+
+
+                <div class="field">
+
+                    <label>
+                        Expiry Date
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="expiry"
+                        class="input"
+                        placeholder="MM/YY"
+                        maxlength="5"
+                        inputmode="numeric"
+                        autocomplete="cc-exp"
+                        oninput="formatExpiry(this)"
+                    >
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label>
+                        CVV
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="cvv"
+                        class="input"
+                        placeholder="CVV"
+                        maxlength="4"
+                        inputmode="numeric"
+                        autocomplete="cc-csc"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- AMOUNT -->
+
+            <div class="field">
+
+                <label>
+                    Enter Amount
+                </label>
+
+
+                <div class="amount-box">
+
+                    <span class="rupee">
+                        ₹
+                    </span>
+
+
+                    <input
+                        type="number"
+                        id="amount"
+                        class="input amount-input"
+                        placeholder="Enter Amount"
+                        min="10"
+                        max="3000"
+                        inputmode="numeric"
+                    >
+
+                </div>
+
+
+                <div class="limit">
+                    Minimum ₹10 &nbsp; | &nbsp; Maximum ₹3000
+                </div>
+
+            </div>
+
+
+
+            <!-- PAY -->
+
+            <button
+                type="button"
+                class="pay-btn"
+                onclick="processPayment()"
+            >
+
+                🔒 Proceed to Pay
+
+            </button>
+
+
+            <div class="secure-text">
+
+                🔒 Your payment information is securely encrypted
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     ERROR POPUP
+========================= -->
+
+<div
+    class="error-popup"
+    id="errorPopup"
+>
+
+
+    <div class="error-card">
+
+
+        <button
+            type="button"
+            class="close-popup"
+            onclick="closeErrorPopup()"
+        >
+            ×
+        </button>
+
+
+        <div class="error-icon">
+            !
+        </div>
+
+
+        <h2>
+            Payment Failed
+        </h2>
+
+
+        <p>
+            Debit card payments are currently unavailable.
+            Please use UPI or another available payment method.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+function goBack() {
+
+    if (window.history.length > 1) {
+
+        window.history.back();
+
+    } else {
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+
+/* =========================
+   CARD NUMBER FORMAT
+========================= */
+
+function formatCardNumber(input) {
+
+    let value =
+        input.value
+        .replace(/\D/g, "")
+        .substring(0, 16);
+
+
+    let formatted =
+        value.match(/.{1,4}/g);
+
+
+    input.value =
+        formatted
+        ? formatted.join(" ")
+        : "";
+
+}
+
+
+/* =========================
+   EXPIRY FORMAT
+========================= */
+
+function formatExpiry(input) {
+
+    let value =
+        input.value
+        .replace(/\D/g, "")
+        .substring(0, 4);
+
+
+    if (value.length >= 3) {
+
+        value =
+            value.substring(0, 2)
+            + "/"
+            + value.substring(2);
+
+    }
+
+
+    input.value = value;
+
+}
+
+
+/* =========================
+   PROCEED TO PAY
+========================= */
+
+function processPayment() {
+
+    document.getElementById("errorPopup").style.display =
+        "flex";
+
+}
+
+
+/* =========================
+   CLOSE POPUP
+========================= */
+
+function closeErrorPopup() {
+
+    document.getElementById("errorPopup").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document.getElementById("errorPopup").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeErrorPopup();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
